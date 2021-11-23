@@ -71,3 +71,87 @@ default:
 	break;
 }
 }
+
+
+
+#include <iostream>
+using namespace std;
+int main() {
+	char fuel;
+	float litres, result;
+	float petrol_price = 1.9;
+	float Diesel_price = 2.06;
+	cout << "Enter 'p' for petrol's price or 'd' for diesel's:";
+	cin >> fuel;
+	fuel = toupper(fuel);
+	switch (fuel)
+	{
+	case 'p':
+		cout << "Enter how many litres is needed:";
+		cin >> litres;
+		result = litres * Diesel_price;
+		cout << "the amount you are required to pay is:" << result;
+		break;
+	case 'D':
+		cout << "Enter how many litres is needed:";
+		cin >> litres;
+		result = litres * petrol_price;
+		cout << "the amount you are required to pay is:" << result;
+		break;
+
+	default:
+		cout << "try again";
+		break;
+	}
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+int main()
+{
+
+	cout << "Kindly select what type of temperature conversion you're interested in" << endl;
+	cout << "Type 'c' for conversion from celcius into fahrenheit" << endl;
+	cout << "Type 'f' for conversion from fahrenheit into celcius" << endl;
+	
+	char select;
+	int temp;
+	cin >> select;
+	switch (select)
+	{
+		case 'c':
+		case 'C':
+
+	{
+		cout << "\nKindly enter the temperature in celcius to be converted into fahrenheit\n";
+		cin >> temp;
+		temp = (temp * 1.8) +32;
+		cout << "\n The temperature after converison is " << temp;
+		break;
+	}
+		case 'f':
+		case 'F':
+		{
+			cout << "\nKindly enter the temperature in fahrenheit to be converted into celcius\n";
+			cin >> temp;
+			temp = (temp - 32) * 0.5556;
+			cout << "\n The temperature after converison is " << temp;
+			break;
+		}
+		
+		default:
+	{
+		cout << "Incorrect command";
+		break;
+	}
+
+	}
+
+	
+	cin.get(); //keeps console window open in Visual Studio
+	return 0;
+}
+
